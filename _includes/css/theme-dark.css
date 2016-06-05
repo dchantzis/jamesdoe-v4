@@ -1,0 +1,120 @@
+.js-dark {
+  color: rgba(0, 0, 0, 1);
+}
+
+.js-dark a,
+.js-dark a:visited,
+.js-dark a:link {
+  color: rgba(0, 0, 0, 1);
+
+  -webkit-transition: color 1000ms ease-in-out, border 250ms ease-in-out;
+  -moz-transition: color 1000ms ease-in-out, border 250ms ease-in-out;
+  -o-transition: color 1000ms ease-in-out, border 250ms ease-in-out;
+  transition: color 1000ms ease-in-out, border 250ms ease-in-out;
+}
+
+.js-dark a:hover,
+.js-dark a:active,
+.js-dark a:focus {
+  color: rgba(0, 0, 0, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.js-dark .i-arrow-left {
+  background-image: url("../img/style/arrow-left-white.svg");
+}
+
+.js-dark .i-arrow-right {
+  background-image: url("../img/style/arrow-right-white.svg");
+}
+
+.js-dark .i-facebook-simple {
+  background-image: url("../img/style/facebook-simple.svg");
+}
+
+.js-dark .i-twitter {
+  background-image: url("../img/style/twitter.svg");
+}
+
+.js-dark .i-pinterest-simple {
+  background-image: url("../img/style/pinterest-simple.svg");
+}
+
+.js-dark .i-instagram {
+  background-image: url("../img/style/instagram.svg");
+}
+
+.js-dark .i-pointer-up {
+  background-image: url("../img/style/pointer-up-black.svg");
+}
+
+.js-dark .i-pointer-down {
+  background-image: url("../img/style/pointer-down-black.svg");
+}
+
+.js-dark .album-cover-carousel .carousel-controls-container {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.js-dark .album-cover-carousel .carousel-controls:hover .carousel-controls-container:hover {
+  background-color: rgba(0,0,0,1);
+}
+
+.js-light .album-cover-carousel .carousel-item-content {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.js-dark .album-cover-carousel .carousel-item-content em {
+  color: rgba(117, 115, 115, 1);
+  font-style: normal;
+}
+
+.js-dark .album-cover-carousel .carousel-item-content a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.js-dark .top-bar,
+.js-dark .middle-bar,
+.js-dark .bottom-bar {
+  background-color: rgba(0, 0, 0, 1);
+
+  -moz-transition: background-color 1000ms ease-in-out;
+  -o-transition: background-color 1000ms ease-in-out;
+  -webkit-transition: background-color 1000ms ease-in-out;
+  transition: background-color 1000ms ease-in-out;
+}
+
+.js-dark .mobile-nav-toggle-box:checked ~ .header-btn .top-bar,
+.js-dark .mobile-nav-toggle-box:checked ~ .header-btn .middle-bar,
+.js-dark .mobile-nav-toggle-box:checked ~ .header-btn .bottom-bar {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.js-dark .main-nav .sub-main-nav ul {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.js-dark .main-nav .sub-main-nav ul::before {
+  background-image: url(../img/style/pointer-up-black.svg);
+}
+
+.js-dark .main-nav .sub-main-nav ul a,
+.js-dark .main-nav .sub-main-nav ul a:link,
+.js-dark .main-nav .sub-main-nav ul a:visited {
+  color: rgba(255, 255, 255, 1);
+}
+
+.js-dark .main-nav .sub-main-nav ul a:hover,
+.js-dark .main-nav .sub-main-nav ul a:active,
+.js-dark .main-nav .sub-main-nav ul a:focus {
+  color: rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.js-dark .masthead ~ .main-content-fade > .main-content-overlay {
+  background: rgba(255,255,255, 0.7);
+  background: -webkit-radial-gradient(circle, rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+  background: -o-radial-gradient(circle, rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+  background: -moz-radial-gradient(circle, rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+  background: radial-gradient(circle, rgba(255,255,255, 0.1), rgba(255,255,255, 0.2));
+}

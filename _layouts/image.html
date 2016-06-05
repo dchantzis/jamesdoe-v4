@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% assign image = page %}
+
+<section class="{{page.sectionClass}} pad-t pad-b-2 push-2">
+
+  <div class="content-container island-1-2 gutter brand-color-light">
+    <div class="grid">
+      <div class="unit [ xs-1 s-1 l-3-5 ]">
+        <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+        <div class="page-info push-0 milli p-container">{{ content | markdownify }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="album-images pad-t-1-2">
+    <div class="grid">
+      <div class="unit [ xs-1 l-3-5 ] ">
+        {% include image.html %}
+      </div>
+    </div>
+  </div>
+
+  {% if page.display-social-media-share-buttons %}
+  <div class="content-container gutter brand-color-light">
+    <div class="social-share-buttons">
+      {% include social-share-buttons.html %}
+    </div>
+  </div>
+  {% endif %}
+
+</section>

@@ -1,0 +1,27 @@
+<header class="masthead push-0 island-1-2 gutter">
+
+  <div class="wrapper">
+    <div class="logo-wrapper">
+    {% if '/' == page.url %}
+      <h1 class="masthead logo text-upper push-0 giga brand brand-highlight">
+        <a href="{{site.baseurl}}/">
+          {{site.title}}
+        </a>
+      </h1>
+    {% else %}
+      <h2 class="masthead logo text-upper push-0 giga brand brand-highlight">
+        <a href="{{site.baseurl}}/">
+        {{ site.title }}
+        </a>
+      </h2>
+    {% endif %}
+    </div>
+
+    <div class="nav-m-l-xl">
+      {% include navigation.html navSection = "main" navType="m-l-xl" %}
+    </div>
+
+  </div>
+
+</header>
+

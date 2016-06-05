@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<section class="{{page.sectionClass}} simple pad-t pad-b-2 push-2">
+
+    <div class="content-container island-1-2 gutter brand-color-light">
+      <div class="restricted-content">
+
+      <article class="push-2" itemscope itemtype="http://schema.org/BlogPosting">
+
+      {% include post-meta-tags.html %}
+
+        <h1 class="brand-highlight push-1-4 mega">{{page.title | strip | capitalize}}</h1>
+        <p class="milli push-1-2">
+          <time itemprop="datePublished" datetime="{{page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
+             {% if page.tags.size >= 1 %}
+              / Tags:
+              {% for item in page.tags %}
+                {% capture post-tag-slug %}/tag/{{ item | slugify }}/{% endcapture %}
+                {% assign tag-info = site.tags | where:"url",post-tag-slug %}
+                {% assign tag-info = tag-info | first %}
+                <a href="{{site.baseurl}}{{tag-info.url}}">{{tag-info.title}}</a>
+                {% if forloop.last == false %}, {% endif %}
+              {% endfor %}
+            {% endif %}
+        </p>
+        {% assign post = page %}
+        {% include posts-time-to-read.html %}
+        <div class="push-0 milli p-container">{{ content | markdownify }}</div>
+
+        {% assign post_images = "" | split:"|" %}
+        {% for image in page.images %}
+          {% assign post_images = post_images | push: image %}
+        {% endfor %}
+
+        {% assign images = site.images | sort:"order" %}
+        {% for image in images %}
+          {% if image.posts contains page.title | downcase %}
+            {% assign post_images = post_images | push: image %}
+          {% endif %}
+        {% endfor %}
+
+        {% if post_images.size >= 1 %}
+          <div class="push-0 pad-t-1-2">
+            {% for image in post_images %}
+              {% include post-image.html %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="social-share-buttons">
+          {% include social-share-buttons.html %}
+        </div>
+
+      </article>
+
+      {% if true == site.disqus.comments and true == page.comments %}
+        <div class="pad-t-1-2 pad-b-1-2">
+          {% include disqus-comments.html %}
+        </div>
+      {% endif %}
+
+      <div class="island-2">
+        <hr class="hr pad-b-1-4">
+      </div>
+
+      <div class="pad-b-2 brand-color-light">
+        {% include related-posts.html %}
+      </div>
+
+      <div class="brand-color-light">
+        {% include pagination/post-pagination.html %}
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+

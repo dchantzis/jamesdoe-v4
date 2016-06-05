@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<section class="{{page.sectionClass}} pad-t pad-b-2 push-2">
+
+  <div class="content-container island-1-2 gutter brand-color-light">
+
+    <div class="restricted-content">
+
+      {% if page.display-info %}
+        <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | strip | capitalize }}</h1>
+        <div class="page-info push-0 milli p-container">{{ content | markdownify }}</div>
+      {% endif %}
+
+      <div class="pad-t">
+        <div class="pad-t pad-b-1-4">
+        {% include forms/contact-form.html %}
+        </div>
+
+        <div class="island-2">
+          <hr class="hr pad-b-1-4">
+        </div>
+
+        <div class="contact-map-container brand-nice pad-t">
+          <div class="push-0 micro p-container pad-b-2">
+            {% include contact-info.html %}
+          </div>
+          {% include google-maps.html %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

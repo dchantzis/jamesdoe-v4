@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+{% assign album_images = "" | split:"|" %}
+{% assign images = site.images | where:"display","true" %}
+{% assign images = images | sort:"order" %}
+{% for image in images %}
+  {% if image.albums contains page.title | downcase %}
+    {% assign album_images = album_images | push: image %}
+  {% endif %}
+{% endfor %}
+
+<section class="{{page.sectionClass}} {% if page.display-info %}pad-t{% endif %} pad-b-2 push-2">
+
+  {% if page.display-info %}
+  <div class="content-container island-1-2 gutter brand-color-light">
+    <div class="grid">
+      <div class="unit [ xs-1 s-1 l-3-5 ]">
+        <h1 class="album-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+
+          {% if page.skills or page.client %}
+            <dl class="list-group clearfix micro push-1-2">
+              {% if page.skills %}
+                <dt class="brand-highlight">Skills:</dt>
+                <dd class="">{{page.skills}}</dd>
+              {% endif %}
+              {% if page.client %}
+                <dt class="brand-highlight">Client:</dt>
+                <dd class="">{{page.client}}</dd>
+              {% endif %}
+            </dl>
+          {% endif %}
+          <div class="album-info push-0 milli p-container">{{ content | markdownify }}</div>
+
+          {% if page.display-social-media-share-buttons %}
+            <div class="social-share-buttons">
+              {% include social-share-buttons.html %}
+            </div>
+          {% endif %}
+
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="album-images pad-t-1-2">
+  {% if album_images.size >= 1 %}
+
+    {% assign mod = 1 %}
+    {% case page.gridType %}
+      {% when 'l-4-5' %}
+        {% assign grid-type = 'm-1-2 l-4-5' %}
+        {% assign mod = 1 %}
+      {% when 'l-1-2' %}
+        {% assign mod = 2 %}
+        {% assign grid-type = 'm-1-2 l-1-2' %}
+      {% when 'l-1' %}
+        {% assign mod = 1 %}
+        {% assign grid-type = 'l-1' %}
+      {% when 'l-1-3' %}
+        {% assign mod = 3 %}
+        {% assign grid-type = 'm-1 l-1-3' %}
+      {% when 'l-1-4' %}
+        {% assign mod = 4 %}
+        {% assign grid-type = 'm-1-2 l-1-4' %}
+    {% endcase %}
+    {% assign mod_checker = mod | minus: 1 %}
+
+    {% for image in album_images | sort:"order" %}
+
+      {% assign loopindex = forloop.index0 | modulo:mod %}
+
+      {% if forloop.first or 0 == loopindex %}
+        <div class="grid">
+      {% endif %}
+
+        <div class="unit [ xs-1 s-1 {{grid-type}} ] image">
+
+          {% if page.enableLightbox %}
+            <div class="active-slideshow" data-image="{{forloop.index0}}">
+            {% else %}
+            <a href="{{site.baseurl}}{{image.url}}">
+          {% endif %}
+            {% include image.html loadType = 'album-view' %}
+          {% if page.enableLightbox %}
+            </div>
+          {% else %}
+            </a>
+          {% endif %}
+        </div>
+
+      {% if forloop.last or mod_checker == loopindex %}
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  </div>
+
+  {% if page.enablePagination %}
+  <div class="content-container gutter brand-color-light">
+    {% include pagination/album-full-pagination.html %}
+  </div>
+  {% endif %}
+
+</section>
+
+{% if page.enableLightbox %}
+  {% include slideshow.html %}
+{% endif %}

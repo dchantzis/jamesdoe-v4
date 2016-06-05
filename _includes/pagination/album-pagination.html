@@ -1,0 +1,38 @@
+{% assign items = site.albums | sort:"order" %}
+
+{% assign prev = false %}
+{% assign next = false %}
+
+{% for item in items %}
+  {% if page.url == item.url %}
+    {% assign current = forloop.index0 %}
+    {% assign prev = forloop.index0 | minus: 1 %}
+    {% assign next = forloop.index0 | plus: 1 %}
+    {% if forloop.first %}
+      {% assign prev = false %}
+    {% endif %}
+    {% if forloop.last %}
+      {% assign next = false %}
+    {% endif %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="pagination pagination-slim brand-highlight">
+  <ul class="list-group--inline milli push-0">
+    <li class="list-group__item">
+      {% if prev %}
+        <a class="brand-color-light" href="{{site.baseurl}}{{items[prev].url}}" title="Previous post"><em class="micro">&lt;</em>prev</a>
+      {% else %}
+        <span class="brand-color-light"><em class="micro">&lt;</em>prev</span>
+      {% endif %}
+    </li>
+    <li class="list-group__item">
+      {% if next %}
+        <a class="brand-color-light" href="{{site.baseurl}}{{items[next].url}}" title="Next post">next<em class="micro">&gt;</em></a>
+      {% else %}
+        <span class="brand-color-light">next<em class="micro">&gt;</em></span>
+      {% endif %}
+    </li>
+  </ul>
+</div>

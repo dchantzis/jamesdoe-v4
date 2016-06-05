@@ -1,0 +1,34 @@
+{% assign albums = site.albums | where:"layout","album" | where:"displayPreviewCover","true" | sort:"order" %}
+{% if "collection" == page.layout %}
+  {% assign albums = albums | where:"parentPage",page.title %}
+{% endif %}
+
+<div class="album-cover-carousel push-2">
+
+  <div class="carousel-controls carousel-controls-previous island-1-2">
+    <div class="carousel-controls-container icon-link">
+      <i class="icon i-24 i-arrow-left"></i>
+      <span class="icon-label hidden">prev</span>
+    </div>
+  </div>
+  <div class="carousel-controls carousel-controls-next island-1-2">
+    <div class="carousel-controls-container icon-link">
+      <i class="icon i-24 i-arrow-right"></i>
+      <span class="icon-label hidden">next</span>
+    </div>
+  </div>
+
+  <ul class="list-group--inline push-0 carousel-items">
+  {% for item in albums %}
+    <li class="carousel-item {% if 0 == forloop.index0 %}js-carousel-item-active{% endif %}" data-theme="js-{{item.cover.theme}}" data-image="{{forloop.index0}}">
+      <div class="carousel-item-image" style="background-image: url({{item.cover.image}});"></div>
+      <div class="island-1-4 gutter-1-2 carousel-item-content text-left">
+        <a href="{{site.baseurl}}{{item.url}}" title="{{item.title | capitalize}}">
+          <span class="micro"><em>{{item.parentPage | upcase}} / </em></span><span class="micro">{{item.title | upcase}}</span>
+        </a>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+
+</div>

@@ -1,0 +1,11 @@
+<figure class="graphic brand-nice">
+  <div class="embed">
+    <img class="embed-item flex-img" src="{{ image.src }}" alt="{{ image.title }}">
+  </div>
+  {% if image.title and image.description %}
+  <figcaption class="pad-t-1-2 micro">
+    <h3 class="push-0 micro brand-highlight">{{ image.title | strip | capitalize }}</h3>
+    <div class="push-0 p-container">{{ image.description }}</div>
+  </figcaption>
+  {% endif %}
+</figure>

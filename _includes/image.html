@@ -1,0 +1,24 @@
+<figure class="graphic brand-nice">
+  <div class="embed">
+    <img class="embed-item flex-img" src="{{ image.fullsize-src }}" alt="{{ image.description }}">
+    {% if 'album-view' == include.loadType  %}
+       <div class="graphic-overlay-container icon-link">
+        <div class="graphic-overlay">
+          <i class="icon i-32 i-add"></i>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <figcaption class="pad-t micro gutter {% if false == page.display-image-info %}hidden{% endif %}">
+    <h3 class="push-1-2 micro brand-highlight">{{ image.title | strip | upcase }} {% if image.date-created %}({{image.date-created}}){% endif %}</h3>
+    {% if image.materials %}
+      <p class="push-0">{{ image.materials }}</p>
+    {% endif %}
+    {% if image.dimensions %}
+      <p class="push-0">{{ image.dimensions }}</p>
+    {% endif %}
+    {% if image.description %}
+      <div class="push-0 p-container">{{ image.description }}</div>
+    {% endif %}
+  </figcaption>
+</figure>

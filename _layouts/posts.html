@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{% if page.posts-filter %}
+  {% assign default-news-list = false %}
+  {% if 'tag' == page.posts-filter.type %}
+    {% assign site-posts = "" | split:"|" %}
+    {% for item in site.posts %}
+      {% if item.tags contains page.posts-filter.value %}
+        {% assign site-posts = site-posts | push: item %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% assign site-posts = site.posts | where:page.posts-filter.type,page.posts-filter.value %}
+  {% endif %}
+{% else %}
+  {% assign default-news-list = true %}
+  {% assign site-posts = paginator.posts %}
+{% endif %}
+
+<section class="{{page.sectionClass}} pad-t pad-b-2 push-2">
+  <div class="content-container island-1-2 gutter brand-color-light">
+    <div class="restricted-content">
+
+      <h1 class="page-title brand-highlight push-1-2 mega">
+        News{% if false == default-news-list %}: {{page.posts-filter.value | capitalize}}{% endif %}
+      </h1>
+
+      {% for post in site-posts %}
+      <article itemscope itemtype="http://schema.org/Article" class="pad-b">
+
+        <h2 class="brand-highlight push-1-4 mega">
+          <a href="{{site.baseurl}}{{post.url}}">{{post.title | strip | capitalize}}</a>
+        </h2>
+
+        <p class="page-tidbits milli push-1-2">
+          <time itemprop="datePublished" datetime="{{post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            {% if post.tags.size >= 1 %}
+              / Tags:
+              {% for item in post.tags %}
+                {% capture post-tag-slug %}/tag/{{ item | slugify }}/{% endcapture %}
+                {% assign tag-info = site.tags | where:"url",post-tag-slug %}
+                {% assign tag-info = tag-info | first %}
+                <a href="{{site.baseurl}}{{tag-info.url}}">{{tag-info.title}}</a>
+                {% if forloop.last == false %}, {% endif %}
+              {% endfor %}
+            {% endif %}
+        </p>
+        {% include posts-time-to-read.html %}
+
+        {% if post.summary %}
+          <p class="push-0 milli">{{ post.summary }}</p>
+        {% else %}
+          {{ content | truncatewords: 150 }}
+        {% endif %}
+
+        <div class="pad-t-1-2 milli">
+          <a href="{{site.baseurl}}{{post.url}}" class="anchor">Read more</a>
+        </div>
+
+        {% if false == forloop.last %}
+        <div class="island-2">
+          <hr class="hr pad-b-1-4">
+        </div>
+        {% endif %}
+
+      </article>
+      {% endfor %}
+
+      <div class="brand-color-light">
+        {% include pagination/default-post-pagination.html %}
+      </div>
+
+    </div>
+  </div>
+</section>

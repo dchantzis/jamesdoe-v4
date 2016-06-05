@@ -1,0 +1,55 @@
+---
+layout: default
+title: about
+titleBefore:
+titleAfter:
+meta: About
+summary:
+author: James Doe
+image:
+keywords:
+sectionClass: about
+navigationSection: main
+includeInNavigation: true
+weight: 4
+parentPage:
+display-info: false
+sitemap:
+  lastMod: 2016-05-02
+  priority: 0.7
+  changeFreq: monthly
+  include: true
+---
+
+<section class="{{page.sectionClass}} simple pad-t pad-b-2 push-2">
+
+    <div class="content-container island-1-2 gutter brand-color-light">
+      <div class="restricted-content">
+        {% if page.display-info %}
+          <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+        {% endif %}
+        <div class="page-info push-0 milli">
+
+          <figure class="graphic brand-nice">
+            <div class="embed">
+              <img class="embed-item flex-img" src="{{site.baseurl}}/assets/img/about.jpg" alt="{{ image.title }}">
+            </div>
+
+            <figcaption class="pad-t micro">
+              <h3 class="push-0 micro brand-highlight">- james doe -</h3>
+              <p class="push-0 micro p-container">b. ~1983</p>
+              <p class="push-0 micro p-container"><em>traveling without moving at 30,27 km/sec.</em></p>
+              <div class="pad-t">
+                <img class="avatar" src="{{site.baseurl}}/assets/img/avatar.jpg" title="Avatar"/>
+              </div>
+            </figcaption>
+
+          </figure>
+
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
