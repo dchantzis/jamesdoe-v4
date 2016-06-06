@@ -2,12 +2,13 @@ $(window).load(function(){
 
   if ( $('.album-cover-carousel').html() != undefined) {
 
-    var carouselInteval = 6000;
+    var carouselInteval = 3000;
 
     $('.album-cover-carousel').addClass('js-carousel-active');
     $('body').attr('class',$('.js-carousel-item-active').data('theme'));
 
-    var slideNextItem = function(){
+    var slideNextItem = function() {
+      stopCarousel();
       var $currentElement = $('.js-carousel-item-active');
       var $nextElement = $('.js-carousel-item-active').next();
       if ( $nextElement.html() == undefined) {
@@ -17,9 +18,11 @@ $(window).load(function(){
       $nextElement.addClass('js-carousel-item-active');
       var $theme = $nextElement.data('theme');
       $('body').attr('class',$theme);
+      startCarousel();
     }
 
-    var slidePreviousItem = function(){
+    var slidePreviousItem = function() {
+      stopCarousel();
       var $currentElement = $('.js-carousel-item-active');
       var $prevElement = $('.js-carousel-item-active').prev();
       if ( $prevElement.html() == undefined) {
@@ -29,6 +32,7 @@ $(window).load(function(){
       $prevElement.addClass('js-carousel-item-active');
       var $theme = $prevElement.data('theme');
       $('body').attr('class',$theme);
+      startCarousel();
     }
 
     $('.carousel-controls-next').on('click', function() {
@@ -59,9 +63,15 @@ $(window).load(function(){
       }
     });
 
-    setInterval(function(){
-      slideNextItem();
-    }, carouselInteval);
+    function startCarousel(){
+      carouselTimer = setTimeout(function(){
+          slideNextItem()
+      }, carouselInteval);
+    }
+    function stopCarousel(){
+      clearTimeout(carouselTimer);
+    }
+    startCarousel();
 
   }
 
