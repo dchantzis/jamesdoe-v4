@@ -257,16 +257,16 @@ li.js-slideshow-navigation-selected {
     width: 90%;
   }
   .slideshow-images img.square {
-    width: 95%;
+    width: 85%;
   }
   .slideshow-images img.horizontal-Ax {
     width: 95%;
   }
   .slideshow-images img.vertical-Ax {
-    width: 90%;
+    width: 85%;
   }
   .slideshow-images img.vertical-custom {
-    width: 90%;
+    width: 80%;
   }
 
   .slideshow-navigation {
@@ -291,16 +291,16 @@ li.js-slideshow-navigation-selected {
     width: 64%;
   }
   .slideshow-images img.square {
-    width: 95%;
+    width: 85%;
   }
   .slideshow-images img.horizontal-Ax {
     width: 100%;
   }
   .slideshow-images img.vertical-Ax {
-    width: 90%;
+    width: 85%;
   }
   .slideshow-images img.vertical-custom {
-    width: 90%;
+    width: 80%;
   }
 
 }
