@@ -3,6 +3,8 @@ function initMap() {
   var mapZoom = $('#map').data('zoom');
   var mapLat = $('#map').data('latitude');
   var mapLng = $('#map').data('longitude');
+  var markerLabel  =$('#map').data('marker');
+  var map = null;
   var styles = [{
     "featureType": "landscape",
     "stylers": [
@@ -134,5 +136,50 @@ function initMap() {
 
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
+
+  google.maps.event.addListener(map, 'click', function(event)
+  {
+    addMarker(event.latLng, map);
+  });
+
+  addMarker({ lat: mapLat, lng: mapLng }, map);
+
+  function addMarker (location, map)
+  {
+
+    var markerIcon = {
+      path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
+      fillColor: '#E31E1E',
+      fillOpacity: 0.8,
+      scale: 1,
+      strokeColor: '#850B0B',
+      strokeWeight: 8
+    };
+
+    var markerImage = {
+      url: "http://www.jamesdoe.com/favicon-152.png",
+      scaledSize : new google.maps.Size(50, 50),
+    };
+
+    marker = new google.maps.Marker({
+      map: map,
+      draggable: false,
+      position: location,
+      //label: markerLabel,
+      icon: markerImage
+      //animation: google.maps.Animation.DROP,
+    });
+
+    marker.addListener('click', toggleBounce);
+  }
+
+  function toggleBounce ()
+  {
+    if (null !== marker.getAnimation()) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
 
 }
