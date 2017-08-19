@@ -11,13 +11,13 @@ layout: default
   {% endif %}
 {% endfor %}
 
-<section class="{{page.sectionClass}} {% if page.display-info %}pad-t{% endif %} pad-b-2 push-2">
+<section class="{{page.sectionClass}} {% if page.display-info %}pad-t{% endif %} pad-b">
 
   {% if page.display-info %}
   <div class="content-container island-1-2 gutter brand-color-light">
     <div class="grid">
-      <div class="unit [ xs-1 s-1 l-3-5 ]">
-        <h1 class="album-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+      <div class="unit [ xs-1 s-1 l-1]">
+        <h1 class="album-title brand-highlight push-1-2 peta">{{ page.title | capitalize }}</h1>
 
           {% if page.skills or page.client %}
             <dl class="list-group clearfix micro push-1-2">
@@ -33,12 +33,26 @@ layout: default
           {% endif %}
           <div class="album-info push-0 milli p-container">{{ content | markdownify }}</div>
 
-          {% if page.display-social-media-share-buttons %}
+          {% if page.enableSlideshow %}
+            <div class="enable-slideshow brand-highlight text-upper micro pad-t-1-2 pad-b-1-2 hidden">
+              <a href="#slideshow">Open slideshow</a>
+            </div>
+          {% endif %}
+
+          {% if page.displaySocialMediaShareButtons %}
             <div class="social-share-buttons">
               {% include social-share-buttons.html %}
             </div>
           {% endif %}
 
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="content-container island-1-2 gutter brand-color-light visually-hidden">
+    <div class="grid">
+      <div class="unit [ xs-1 s-1 l-3-5 ]">
+        <h1 class="album-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
       </div>
     </div>
   </div>
@@ -105,8 +119,22 @@ layout: default
   </div>
   {% endif %}
 
+  {% if page.includeAlbumGridParentPasedBased == true or page.includeAlbumGridCategoryBased == true %}
+    <div class="island-2">
+      <hr class="hr pad-b-1-4">
+    </div>
+  {% endif %}
+
 </section>
 
-{% if page.enableLightbox %}
+{% if page.includeAlbumGridParentPasedBased %}
+  {% include albums-grid-parent-page-based.html %}
+{% endif %}
+
+{% if page.includeAlbumGridCategoryBased %}
+  {% include albums-grid-category-based.html album-category = 'work' %}
+{% endif %}
+
+{% if page.enableLightbox == true or page.enableSlideshow == true %}
   {% include slideshow.html %}
 {% endif %}

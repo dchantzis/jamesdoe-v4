@@ -27,6 +27,10 @@
     {% include smartlook-tracking.html %}
   {% endif %}
 
+  {% if site.include-hotjar-tracking %}
+    {% include hotjar-tracking.html %}
+  {% endif %}
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -40,6 +44,11 @@
     <div class="main-content-overlay"></div>
     {{ content | strip }}
   </main>
+
+
+  {% if page.title != 'Home' %}
+    {% include footer.html %}
+  {% endif %}
 
   <script src="{{site.baseurl}}/assets/js/jquery-1.12.3.min.js"></script>
   <script src="{{site.baseurl}}/assets/js/jquery.mobile.custom.min.js"></script>

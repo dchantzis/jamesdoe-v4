@@ -10,7 +10,8 @@ body {
 }
 
 .brand-nice {
-  font-family: 'Lora', serif;
+  font-family: 'Lekton', sans-serif;
+  /* font-family: 'Lora', serif; */
 }
 
 .brand {
@@ -128,7 +129,7 @@ body {
 }
 
 .graphic figcaption {
-  text-align: left;
+  text-align: center;
   color: rgba(117, 115, 115, 1);
 }
 .graphic .embed {
@@ -294,6 +295,27 @@ tbody tr:nth-child(odd) th {
   position:  static !important;
 }
 
+.main-footer {
+  text-align: center;
+}
+
+.album-title,
+.page-title {
+  text-align: center;
+}
+.album-info,
+.page-info {
+  text-align: center;
+}
+
+.enable-slideshow {
+  text-align: center;
+}
+
+.album .social-share-buttons {
+  text-align: center;
+}
+
 @media only screen and (min-width: 25em) {
 
 }
@@ -368,6 +390,7 @@ tbody tr:nth-child(odd) th {
 
 }
 
+
 @media only screen and (min-width: 60em) {
 
   .album-images {
@@ -404,6 +427,10 @@ tbody tr:nth-child(odd) th {
     margin-right: auto;
   }
 
+  section.error404 .restricted-content {
+    width: 20rem;
+  }
+
   section.about .restricted-content {
     width: 50rem;
   }
@@ -425,13 +452,40 @@ tbody tr:nth-child(odd) th {
     margin-right: auto;
   }
 
+  section.error404 .restricted-content {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   section.about .restricted-content {
     width: 50rem;
   }
 
+/*
+  .album {
+    margin: 0 auto;
+    width: 50rem;
+  }
+*/
+
+}
+
+@media only screen and (min-width: 70em) {
+/*
+  .album {
+    margin: 0 auto;
+    width: 60rem;
+  }
+*/
 }
 
 @media only screen and (min-width: 90em) {
+
+  .album {
+    margin: 0 auto;
+    width: 70rem;
+  }
 
   .album-images {
     padding-left: 1.5rem;

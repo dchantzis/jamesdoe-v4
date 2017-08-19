@@ -2,6 +2,17 @@
 layout: default
 ---
 
-{% assign album-title = page.title | downcase %}
+<section class="{{page.sectionClass}} pad-t">
 
-{% include albums.html album-category = album-title %}
+  <div class="content-container island-1-2 gutter brand-color-light visually-hidden">
+    <div class="grid">
+      <div class="unit [ xs-1 s-1 l-3-5 ]">
+        <h1 class="album-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+      </div>
+    </div>
+  </div>
+
+  {% assign album-title = page.title | downcase %}
+  {% include albums-grid-category-based.html album-category = album-title %}
+
+</section>

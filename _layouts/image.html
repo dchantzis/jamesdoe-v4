@@ -4,11 +4,11 @@ layout: default
 
 {% assign image = page %}
 
-<section class="{{page.sectionClass}} pad-t pad-b-2 push-2">
+<section class="{{page.sectionClass}} pad-t pad-b">
 
   <div class="content-container island-1-2 gutter brand-color-light">
     <div class="grid">
-      <div class="unit [ xs-1 s-1 l-3-5 ]">
+      <div class="unit [ xs-1 s-1 l-1 ]">
         <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
         <div class="page-info push-0 milli p-container">{{ content | markdownify }}</div>
       </div>
@@ -23,12 +23,18 @@ layout: default
     </div>
   </div>
 
-  {% if page.display-social-media-share-buttons %}
+  {% if page.displaySocialMediaShareButtons %}
   <div class="content-container gutter brand-color-light">
     <div class="social-share-buttons">
       {% include social-share-buttons.html %}
     </div>
   </div>
+  {% endif %}
+
+  {% if page.includeAlbumGridParentPasedBased == true or page.includeAlbumGridCategoryBased == true %}
+    <div class="island-2">
+      <hr class="hr pad-b-1-4">
+    </div>
   {% endif %}
 
 </section>

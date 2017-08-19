@@ -1,4 +1,4 @@
-<figure class="graphic brand-nice">
+<figure class="graphic brand-nice push-1-2">
   <div class="embed">
     <img class="embed-item flex-img" src="{{ image.fullsize-src }}" alt="{{ image.description }}">
     {% if 'album-view' == include.loadType  %}
@@ -10,7 +10,7 @@
     {% endif %}
   </div>
   <figcaption class="pad-t micro gutter {% if false == page.display-image-info %}hidden{% endif %}">
-    <h3 class="push-1-2 micro brand-highlight">{{ image.title | strip | upcase }} {% if image.date-created %}({{image.date-created}}){% endif %}</h3>
+    <h3 class="push-0 micro brand-highlight">{{ image.title | strip | upcase }} {% if image.date-created %}({{image.date-created}}){% endif %}</h3>
     {% if image.materials %}
       <p class="push-0">{{ image.materials }}</p>
     {% endif %}

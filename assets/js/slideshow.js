@@ -16,6 +16,21 @@ $(window).load(function(){
 
   }
 
+  if($('.enable-slideshow').length > 0) {
+    $('.enable-slideshow').removeClass('hidden');
+
+    $('.enable-slideshow').on('click', function() {
+      $(".slideshow-container").addClass('js-slideshow-container-fade');
+
+      var pointer = 0;
+      $(".slideshow-images li").removeClass('js-slideshow-image-selected');
+      $(".slideshow-images li[data-image='" + pointer + "']").addClass('js-slideshow-image-selected');
+
+      $(".slideshow-navigation li").removeClass('js-slideshow-navigation-selected');
+      $(".slideshow-navigation li[data-image='" + pointer + "']").addClass('js-slideshow-navigation-selected');
+    });
+  }
+
   if($('.slideshow').length > 0) {
 
     $(".slideshow-images img").each(function(){

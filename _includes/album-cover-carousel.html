@@ -22,6 +22,9 @@
   {% for item in albums %}
     <li class="carousel-item {% if 0 == forloop.index0 %}js-carousel-item-active{% endif %}" data-theme="js-{{item.cover.theme}}" data-image="{{forloop.index0}}">
       <div class="carousel-item-image" style="background-image: url({{item.cover.image}});"></div>
+      <div class="carousel-item-image-link">
+        <a href="{{site.baseurl}}{{item.url}}" title="{{item.title | capitalize}}">&nbsp;</a>
+      </div>
       <div class="island-1-4 gutter-1-2 carousel-item-content text-left">
         <a href="{{site.baseurl}}{{item.url}}" title="{{item.title | capitalize}}">
           <span class="micro"><em>{{item.parentPage | upcase}} / </em></span><span class="micro">{{item.title | upcase}}</span>

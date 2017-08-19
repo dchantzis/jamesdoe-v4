@@ -2,7 +2,7 @@ $(window).load(function(){
 
   if ( $('.album-cover-carousel').html() != undefined) {
 
-    var carouselInteval = 3000;
+    var carouselInteval = 5000;
 
     $('.album-cover-carousel').addClass('js-carousel-active');
     $('body').attr('class',$('.js-carousel-item-active').data('theme'));
