@@ -1,6 +1,7 @@
 <meta name="description" content="{% if page.meta %}{{page.meta}}{% else %}{{site.description}}{% endif %}">
 <meta name="author" content="{% if false == page.author %}{{site.author}}{% else %}{{page.author}}{% endif %}">
 <meta name="keywords" content="{% for keyword in site.data.meta-keywords %}{{keyword}}{% if false == forloop.last %}, {% endif %}{% endfor %}">
+<meta itemprop="isFamilyFriendly" content="{{ page.isFamilyFriendly }}" />
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="{% if nil != page.titleBefore %}{{page.titleBefore}} · {% endif %}{% if nil != page.title %} {{page.title}} · {% endif %}{{site.title}}{% if nil !=  page.titleAfter %} · {{page.titleAfter}} {% endif %}">

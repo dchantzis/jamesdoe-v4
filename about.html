@@ -25,12 +25,16 @@ sitemap:
 
     <div class="content-container island-1-2 gutter brand-color-light">
       <div class="restricted-content">
-        {% if page.display-info %}
-          <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
-        {% endif %}
+        <h1 class="page-title brand-highlight push-1-2 mega{% if page.display-info == false %} visually-hidden{% endif %}">{{ page.title | capitalize }}</h1>
+
         <div class="page-info push-0 milli">
 
+<div class="grid">
+<div class="unit [ xs-1 s-1 ] image">
+
+
           <figure class="graphic brand-nice">
+
             <div class="embed">
               <img class="embed-item flex-img" src="{{site.baseurl}}/assets/img/about.jpg" alt="{{ image.title }}">
             </div>
@@ -45,6 +49,9 @@ sitemap:
             </figcaption>
 
           </figure>
+
+</div>
+</div>
 
         </div>
       </div>

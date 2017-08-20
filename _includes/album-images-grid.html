@@ -1,0 +1,54 @@
+{% assign album_images = "" | split:"|" %}
+{% assign images = site.images | sort:"order" %}
+{% assign page_album_first = page.albums | first | downcase %}
+
+{% for image in images %}
+
+  {% if image.albums contains page_album_first %}
+
+    {% if image.display == false %}
+      {% continue %}
+    {% endif %}
+
+    {% assign album_images = album_images | push: image %}
+
+  {% endif %}
+
+{% endfor %}
+
+{% if album_images.size >= 1 %}
+
+  <div class="album-images-grid gutter-2 pad-t">
+
+    {% for image in album_images %}
+
+      {% assign loopindex = forloop.index0 | modulo:4 %}
+
+      {% if forloop.first or 0 == loopindex %}
+      <div class="grid">
+      {% endif %}
+
+      <div class="unit [ xs-1 s-1-2 m-1-2 l-1-4 ] gutter-1-4">
+        <a href="{{ site.baseurl }}{{ image.url }}">
+        <figure class="graphic">
+          <div class="embed">
+            <img class="embed-item flex-img" src="{{ image.thumbnail-src }}" alt="{{ image.title }}">
+            <div class="graphic-overlay-container icon-link">
+              <div class="graphic-overlay">
+                <i class="icon i-32 i-add"></i>
+              </div>
+            </div>
+          </div>
+        </figure>
+        </a>
+      </div>
+
+      {% if forloop.last or 3 == loopindex %}
+      </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+{% endif %}

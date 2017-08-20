@@ -9,7 +9,7 @@
       </div>
     {% endif %}
   </div>
-  <figcaption class="pad-t micro gutter {% if false == page.display-image-info %}hidden{% endif %}">
+  <figcaption class="pad-t micro gutter {% if false == page.display-image-info %}visually-hidden{% endif %}">
     <h3 class="push-0 micro brand-highlight">{{ image.title | strip | upcase }} {% if image.date-created %}({{image.date-created}}){% endif %}</h3>
     {% if image.materials %}
       <p class="push-0">{{ image.materials }}</p>

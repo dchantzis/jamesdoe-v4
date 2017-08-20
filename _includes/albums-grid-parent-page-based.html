@@ -10,13 +10,17 @@
       {% continue %}
     {% endif %}
 
+    {% if album.display == false %}
+      {% continue %}
+    {% endif %}
+
     {% assign page_albums = page_albums | push: album %}
   {% endif %}
 {% endfor %}
 
 {% if albums.size >= 1 %}
 
-<div class="{% if page.layout == 'album-index' %}gutter-1-4{% else %}gutter-2{% endif %} pad-t">
+<div class="albums-grid {% if page.layout == 'album-index' %}gutter-1-4{% else %}gutter-2{% endif %} pad-t">
 
   {% for album in page_albums %}
     {% assign loopindex = forloop.index0 | modulo:4 %}

@@ -1,6 +1,4 @@
-{% if site.includeAlbumImagesGrid: true
-includeAlbumGridCategoryBased: false
-displaySocialMediaShareButtons %}
+{% if site.displaySocialMediaShareButtons == true or page.displaySocialMediaShareButtons == true %}
   <h6 class="push-0 brand-highlight inline-block milli">Share:</h6>
   <ul class="push-0 list-group--inline inline-block social-btns">
   {% for item in site.data.social-media-share-buttons %}
