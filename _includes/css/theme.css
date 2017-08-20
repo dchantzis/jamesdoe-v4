@@ -18,18 +18,23 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.brand-highlight {
+.brand-highlight,
+a.brand-highlight {
   letter-spacing: 3px;
   font-weight: normal;
 }
 
-.brand-color-light {
-  color: rgba(117, 115, 115, 1);
+.brand-color-light,
+a.brand-color-light {
+  color: rgba(117, 115, 115, 1)!important;
 }
 
-.brand-color-dark {
+.brand-color-dark,
+a.brand-color-dark {
   color: rgba(0, 0, 0, 1);
 }
+
+
 
 .masthead {
   position: relative;

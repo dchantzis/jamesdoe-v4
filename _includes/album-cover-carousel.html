@@ -21,7 +21,7 @@
   <ul class="list-group--inline push-0 carousel-items">
   {% for item in albums %}
     <li class="carousel-item {% if 0 == forloop.index0 %}js-carousel-item-active{% endif %}" data-theme="js-{{item.cover.theme}}" data-image="{{forloop.index0}}">
-      <div class="carousel-item-image" style="background-image: url({{item.cover.image}});"></div>
+      <div class="carousel-item-image" style="background-image: url({{ site.images-bucket-url }}{{ item.cover.image }});"></div>
       <div class="carousel-item-image-link">
         <a href="{{site.baseurl}}{{item.url}}" title="{{item.title | capitalize}}">&nbsp;</a>
       </div>

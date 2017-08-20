@@ -1,6 +1,6 @@
 <figure class="graphic brand-nice push-1-2">
   <div class="embed">
-    <img class="embed-item flex-img" src="{{ image.fullsize-src }}" alt="{{ image.description }}">
+    <img class="embed-item flex-img" src="{{ site.images-bucket-url }}{{ image.fullsizeFilename }}" alt="{{ image.description }}">
     {% if 'album-view' == include.loadType  %}
        <div class="graphic-overlay-container icon-link">
         <div class="graphic-overlay">

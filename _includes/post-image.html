@@ -1,6 +1,6 @@
 <figure class="graphic brand-nice">
   <div class="embed">
-    <img class="embed-item flex-img" src="{{ image.src }}" alt="{{ image.title }}">
+    <img class="embed-item flex-img" src="{{ site.images-bucket-url }}{{ image.fullsizeFilename }}" alt="{{ image.title }}">
   </div>
   {% if image.title and image.description %}
   <figcaption class="pad-t-1-2 micro">
