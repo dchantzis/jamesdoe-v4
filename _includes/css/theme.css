@@ -202,9 +202,11 @@ a.brand-color-dark {
   content: " /";
 }
 
+/*
 .album-images .unit {
   margin-bottom: 2.6000rem;
 }
+*/
 
 .form-submitting {
   opacity: 0.7;
@@ -378,7 +380,7 @@ tbody tr:nth-child(odd) th {
 
   .album-images .unit {
     padding: 0.7000rem;
-    margin-bottom: 2.8000rem;
+    /* margin-bottom: 2.8000rem; */
   }
 
   .album-images .unit:first-child {

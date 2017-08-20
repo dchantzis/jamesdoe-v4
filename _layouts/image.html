@@ -8,7 +8,7 @@ layout: default
 
   <div class="restricted-content">
 
-    <div class="content-container island-1-2 gutter brand-color-light">
+    <div class="content-container island-1-2 gutter-2 brand-color-light">
       <div class="grid">
         <div class="unit [ xs-1 s-1 l-1 ]">
           <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
@@ -17,21 +17,24 @@ layout: default
       </div>
     </div>
 
-      <div class="album-images pad-t-1-2">
+      <div class="album-images pad-t-1-2 gutter">
         <div class="grid">
-          <div class="unit [ xs-1 l-3-5 ] ">
+          <div class="unit [ xs-1 m-3-5 ] ">
             {% include image.html %}
+          </div>
+          <div class="unit [ xs-1 m-2-5 ]">
+            {% include forms/artwork-contact-for-price-form.html %}
           </div>
         </div>
       </div>
 
-    {% if page.displaySocialMediaShareButtons %}
-    <div class="content-container gutter brand-color-light">
-      <div class="social-share-buttons">
-        {% include social-share-buttons.html %}
+      {% if page.displaySocialMediaShareButtons %}
+      <div class="content-container gutter brand-color-light">
+        <div class="social-share-buttons">
+          {% include social-share-buttons.html %}
+        </div>
       </div>
-    </div>
-    {% endif %}
+      {% endif %}
 
     {% if page.includeAlbumImagesGrid %}
       <div class="island-2">
