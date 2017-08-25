@@ -1,0 +1,40 @@
+{% if site.displaySocialMediaShareButtons == true or page.displaySocialMediaShareButtons == true %}
+  <h6 class="push-0 brand-highlight inline-block milli">Share:</h6>
+  <ul class="push-0 list-group--inline inline-block social-btns">
+  {% for item in site.data.social-media-share-buttons %}
+      {% if false == item.display %}{% continue %}{% endif %}
+
+      {% if item.provider == 'email' %}
+        <li class="list-group__item kilo">
+          <a href="mailto:?subject=JamesDoe, {{page.title | capitalize}} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&body=Check out {{ page.title | upcase}}{% if page.layout == 'image' %}, {{page.date-created}}{% endif %} by JamesDoe on {{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+            <i class="icon i-18 i-{{item.provider}}"></i>
+            <span class="icon-label">{{item.provider}}</span>
+          </a>
+        </li>
+      {% else if item.provider == 'twitter' %}
+        <li class="list-group__item kilo">
+          <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}&text={{page.title | capitalize}} by {{ site.title }} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&url={{site.url}}{{page.url}}&via=james_doe" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+            <i class="icon i-18 i-{{item.provider}}"></i>
+            <span class="icon-label">{{item.provider}}</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="list-group__item kilo">
+          <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+            <i class="icon i-18 i-{{item.provider}}"></i>
+            <span class="icon-label">{{item.provider}}</span>
+          </a>
+        </li>
+      {% endif %}
+
+  {% endfor %}
+
+        <li class="list-group__item kilo">
+          <i class="icon i-18 i-link"></i>
+          <fieldset class="push-1-4 milli">
+            <input type="text" class="field-element text island-1-4" readonly="readonly" value="{{ site.url }}{{ page.url }}">
+          </fieldset>
+        </li>
+
+  </ul>
+{% endif %}

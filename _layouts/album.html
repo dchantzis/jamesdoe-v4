@@ -19,7 +19,7 @@ layout: default
   <div class="content-container island-1-2 gutter brand-color-light">
     <div class="grid">
       <div class="unit [ xs-1 s-1 l-1]">
-        <h1 class="album-title brand-highlight push-1-2 peta">{{ page.title | capitalize }}</h1>
+        <h1 class="album-title brand brand-highlight push-1-2 peta">{{ page.title | capitalize }}</h1>
 
           {% if page.skills or page.client %}
             <dl class="list-group clearfix micro push-1-2">
@@ -33,7 +33,7 @@ layout: default
               {% endif %}
             </dl>
           {% endif %}
-          <div class="album-info push-0 milli p-container">{{ content | markdownify }}</div>
+          <div class="album-info push-0 micro p-container">{{ content | markdownify }}</div>
 
           {% if page.enableSlideshow %}
             <div class="enable-slideshow text-upper micro pad-t-1-2 pad-b-1-2 hidden">
@@ -43,7 +43,7 @@ layout: default
 
           {% if page.displaySocialMediaShareButtons %}
             <div class="social-share-buttons">
-              {% include social-share-buttons.html %}
+              {% include social-share-buttons-with-overlay.html %}
             </div>
           {% endif %}
 
@@ -54,7 +54,7 @@ layout: default
   <div class="content-container island-1-2 gutter brand-color-light visually-hidden">
     <div class="grid">
       <div class="unit [ xs-1 s-1 l-3-5 ]">
-        <h1 class="album-title brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
+        <h1 class="album-title brand brand-highlight push-1-2 mega">{{ page.title | capitalize }}</h1>
       </div>
     </div>
   </div>

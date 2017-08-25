@@ -9,20 +9,20 @@ layout: default
     <div class="restricted-content">
 
       {% if page.display-info %}
-        <h1 class="page-title brand-highlight push-1-2 mega">{{ page.title | strip | capitalize }}</h1>
+        <h1 class="page-title brand brand-highlight push-1-2 mega">{{ page.title | strip | capitalize }}</h1>
         <div class="page-info push-0 milli p-container">{{ content | markdownify }}</div>
       {% endif %}
 
       <div class="pad-t">
         <div class="pad-t pad-b-1-4">
-        {% include forms/contact-form.html %}
+        {% include forms/form-contact.html %}
         </div>
 
         <div class="island-2">
           <hr class="hr pad-b-1-4">
         </div>
 
-        <div class="contact-map-container brand-nice pad-t">
+        <div class="contact-map-container brand pad-t">
           <div class="push-0 micro p-container pad-b-2">
             {% include contact-info.html %}
           </div>

@@ -4,11 +4,11 @@
 
 - provider: twitter
   display: true
-  sharer-prefix: https://twitter.com/home?status=
+  sharer-prefix: https://twitter.com/intent/tweet?original_referer=
 
 - provider: reddit
   display: true
-  sharer-prefix: //www.reddit.com/submit?url=
+  sharer-prefix: https://www.reddit.com/submit?url=
 
 - provider: linkedin
   display: false
@@ -24,8 +24,12 @@
 
 - provider: tumblr
   display: true
-  sharer-prefix: http://tumblr.com/widgets/share/tool?canonicalUrl=
+  sharer-prefix: https://www.tumblr.com/share/photo?source=
+
+- provider: email
+  display: true
+  share-prefix: mailto:?subject=
 
 - provider: instagram
-  display: true
+  display: false
   sharer-prefix:

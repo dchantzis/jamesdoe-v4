@@ -169,6 +169,18 @@
   background-image: url("../img/style/search.svg");
 }
 
+.i-share-arrow {
+  background-image: url("../img/style/share-arrow.svg");
+}
+
+.i-email {
+  background-image: url("../img/style/email-white.svg");
+}
+
+.i-link {
+  background-image: url("../img/style/link-black.svg");
+}
+
 .social-btn-facebook {
   background-color: rgba(59, 89, 152, 1); /* #3B5998 */
 }

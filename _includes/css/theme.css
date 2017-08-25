@@ -2,7 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Abel', sans-serif;
+  font-family: 'Lekton', sans-serif;
+/*  font-family: 'Abel', sans-serif; */
 }
 
 body {
@@ -10,12 +11,13 @@ body {
 }
 
 .brand-nice {
-  font-family: 'Lekton', sans-serif;
-  /* font-family: 'Lora', serif; */
+  /* font-family: 'Lekton', sans-serif; */
+  font-family: 'Lora', serif;
 }
 
 .brand {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lekton', sans-serif;
+/*  font-family: 'Roboto', sans-serif; */
 }
 
 .brand-highlight,
@@ -203,7 +205,8 @@ a.brand-color-dark {
 }
 
 /*
-.album-images .unit {
+.album-images .unit,
+.album-image {
   margin-bottom: 2.6000rem;
 }
 */
@@ -244,12 +247,14 @@ fieldset.form-error textarea {
   border: 1px solid rgba(204, 59, 59, 1);
 }
 
-.form-contact-notification {
+.form-contact-notification,
+.form-contact-price-notification {
   background-color: #D1D1D1;
 }
 
 fieldset .field-error,
-.form-contact-notification.form-error {
+.form-contact-notification.form-error,
+.form-contact-price-notification.form-error {
   background-color: rgba(204, 59, 59, 1);
   color: #fff;
   width: auto;
@@ -325,6 +330,10 @@ tbody tr:nth-child(odd) th {
 
 @media only screen and (min-width: 25em) {
 
+  .album-image figcaption {
+    text-align: center;
+  }
+
 }
 
 @media only screen and (min-width: 38em) {
@@ -378,7 +387,8 @@ tbody tr:nth-child(odd) th {
     padding: 0;
   }
 
-  .album-images .unit {
+  .album-images .unit,
+  .album-image .unit {
     padding: 0.7000rem;
     /* margin-bottom: 2.8000rem; */
   }
@@ -388,6 +398,10 @@ tbody tr:nth-child(odd) th {
   }
   .album-images .unit:last-child {
     /*padding-right: 0;*/
+  }
+
+  .album-image figcaption {
+    text-align: left;
   }
 
   .content-container {
@@ -400,12 +414,14 @@ tbody tr:nth-child(odd) th {
 
 @media only screen and (min-width: 60em) {
 
-  .album-images {
+  .album-images,
+  .album-image {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  .album-images .unit {
+  .album-images .unit,
+  .album-image .unit {
     padding: 0.7500rem;
     margin-bottom: 0;
   }
@@ -414,6 +430,10 @@ tbody tr:nth-child(odd) th {
   }
   .album-images .unit:last-child {
     /*padding-right: 0;*/
+  }
+
+  .album-image figcaption {
+    text-align: left;
   }
 
   .content-container {
@@ -500,7 +520,8 @@ tbody tr:nth-child(odd) th {
     width: 70rem;
   }
 */
-  .album-images {
+  .album-images,
+  .album-image {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
