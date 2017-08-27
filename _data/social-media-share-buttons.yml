@@ -7,7 +7,7 @@
   sharer-prefix: https://twitter.com/intent/tweet?original_referer=
 
 - provider: reddit
-  display: true
+  display: false
   sharer-prefix: https://www.reddit.com/submit?url=
 
 - provider: linkedin
@@ -19,7 +19,7 @@
   sharer-prefix: https://pinterest.com/pin/create/button/?url=
 
 - provider: googleplus
-  display: true
+  display: false
   sharer-prefix: https://plus.google.com/share?url=
 
 - provider: tumblr

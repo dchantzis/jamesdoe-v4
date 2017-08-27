@@ -1,40 +1,71 @@
 {% if site.displaySocialMediaShareButtons == true or page.displaySocialMediaShareButtons == true %}
-  <h6 class="push-0 brand-highlight inline-block milli">Share:</h6>
-  <ul class="push-0 list-group--inline inline-block social-btns">
-  {% for item in site.data.social-media-share-buttons %}
-      {% if false == item.display %}{% continue %}{% endif %}
 
-      {% if item.provider == 'email' %}
-        <li class="list-group__item kilo">
-          <a href="mailto:?subject=JamesDoe, {{page.title | capitalize}} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&body=Check out {{ page.title | upcase}}{% if page.layout == 'image' %}, {{page.date-created}}{% endif %} by JamesDoe on {{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
-            <i class="icon i-18 i-{{item.provider}}"></i>
-            <span class="icon-label">{{item.provider}}</span>
-          </a>
-        </li>
-      {% else if item.provider == 'twitter' %}
-        <li class="list-group__item kilo">
-          <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}&text={{page.title | capitalize}} by {{ site.title }} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&url={{site.url}}{{page.url}}&via=james_doe" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
-            <i class="icon i-18 i-{{item.provider}}"></i>
-            <span class="icon-label">{{item.provider}}</span>
-          </a>
-        </li>
-      {% else %}
-        <li class="list-group__item kilo">
-          <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
-            <i class="icon i-18 i-{{item.provider}}"></i>
-            <span class="icon-label">{{item.provider}}</span>
-          </a>
-        </li>
-      {% endif %}
+<div class="push-0 social-media-share-btns">
 
-  {% endfor %}
+    <div class="icon-link enable-social-btns-overlay tooltip milli" data-message="share">
+      <i class="icon i-24 i-share-arrow"></i>
+      <span class="icon-label hidden">Share</span>
+    </div>
 
-        <li class="list-group__item kilo">
-          <i class="icon i-18 i-link"></i>
-          <fieldset class="push-1-4 milli">
-            <input type="text" class="field-element text island-1-4" readonly="readonly" value="{{ site.url }}{{ page.url }}">
-          </fieldset>
-        </li>
+    <div class="push-0 social-btns-overlay">
 
-  </ul>
+      <div class="btn-close btn-close-social-btns island-1-2">
+        <div class="icon-link">
+          <i class="icon i-24 i-close"></i>
+          <span class="icon-label hidden">close</span>
+        </div>
+      </div>
+
+      <div class="push-0 social-btns-container">
+
+        <div class="push-0 pad-t-1-4 pad-b-1-4 social-btns-wrapper text-left">
+
+          <div class="push-0 text-center island-1-4">
+            <h6 class="push-0 brand-highlight inline-block kilo">Share</h6>
+          </div>
+          <ul class="push-0 list-group block social-btns">
+          {% for item in site.data.social-media-share-buttons %}
+              {% if false == item.display %}{% continue %}{% endif %}
+
+              {% if item.provider == 'email' %}
+                <li class="island-1-4 gutter-1-2 list-group__item milli">
+                  <a href="mailto:?subject=JamesDoe, {{page.title | capitalize}} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&body=Check out {{ page.title | upcase}}{% if page.layout == 'image' %}, {{page.date-created}}{% endif %} by JamesDoe on {{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+                    <i class="icon i-24 i-{{item.provider}}"></i>
+                    <span class="icon-label text-upper gutter-1-4">{{item.provider}}</span>
+                  </a>
+                </li>
+              {% else if item.provider == 'twitter' %}
+                <li class="island-1-4 gutter-1-2 list-group__item milli">
+                  <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}&text={{page.title | capitalize}} by {{ site.title }} {% if page.layout == 'image' %}, {{page.date-created}}{% endif %}&url={{site.url}}{{page.url}}&via=james_doe" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+                    <i class="icon i-24 i-{{item.provider}}"></i>
+                    <span class="icon-label text-upper gutter-1-4">{{item.provider}}</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="island-1-4 gutter-1-2 list-group__item milli">
+                  <a href="{{item.sharer-prefix}}{{site.url}}{{page.url}}" data-type="{{item.provider}}" class="social-btn icon-link" target="_blank">
+                    <i class="icon i-24 i-{{item.provider}}"></i>
+                    <span class="icon-label text-upper gutter-1-4">{{item.provider}}</span>
+                  </a>
+                </li>
+              {% endif %}
+
+          {% endfor %}
+
+            <li class="island-1-4 gutter-1-2 list-group__item milli share-page">
+              <i class="icon i-24 i-link"></i>
+              <fieldset class="push-1-4 milli inline-block">
+                <input type="text" name="share-page-url" class="share-page-url field-element text island-1-4" readonly="readonly" value="{{ site.url }}{{ page.url }}">
+              </fieldset>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+</div>
+
 {% endif %}

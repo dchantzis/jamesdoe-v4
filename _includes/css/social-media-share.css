@@ -1,0 +1,125 @@
+.social-btns-overlay {
+  position: relative;
+  opacity: 0;
+  transition: all 200ms linear;
+  z-index: -1;
+}
+
+.social-btns-container {
+  position: fixed;
+    top: 0rem;
+    left: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    transform-origin: center center;
+    opacity: 1;
+    -moz-transition: all 250ms ease-in;
+    -o-transition: all 250ms ease-in;
+    -webkit-transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
+}
+
+.js-social-btns-container-fade {
+  opacity: 1;
+  z-index: 62;
+}
+
+.social-btns
+{
+  opacity: 1;
+}
+
+.btn-close-social-btns {
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 64;
+
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+.btn-close-social-btns .icon-link {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 1.5rem;
+  right: 1.5rem;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.5);
+
+  cursor: pointer;
+
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.btn-close-social-btns i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn-close-social-btns .icon-link:hover {
+  background-color: rgba(0,0,0,1);
+}
+.btn-close-social-btns .i-close {
+  background-image: url('../img/style/close-white.svg');
+}
+
+.social-media-share-btns {
+  margin: 0 auto;
+  width: 55px;
+}
+
+.nav-container li {
+  -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.nav-container li:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-container li:hover a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.social-btns-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.social-btns-overlay fieldset {
+  width: 90%;
+}
+
+@media only screen and (min-width: 38em) {
+
+  .social-btns-wrapper {
+
+  }
+
+}
+
+@media only screen and (min-width: 60em) {
+
+  .social-btns-wrapper {
+
+  }
+
+}

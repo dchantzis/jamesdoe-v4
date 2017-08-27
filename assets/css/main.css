@@ -19,6 +19,7 @@
 {% include css/navigation.css %}
 {% include css/theme-dark.css %}
 {% include css/theme-light.css %}
+{% include css/social-media-share.css %}
 {% include css/slideshow.css %}
 {% include css/search.css %}
 {% include css/album-cover-carousel.css %}

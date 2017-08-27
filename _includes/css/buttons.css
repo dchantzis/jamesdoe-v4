@@ -38,21 +38,103 @@ a.social-btn:visited {
   display: block;
   text-align: center;
   padding-top: 5px;
+  /* transition: all 200ms ease-out; */
+}
+
+.social-btns-overlay a.social-btn,
+.social-btns-overlay a.social-btn:link,
+.social-btns-overlay a.social-btn:visited {
+  text-align: left;
+  color: #000000;
+}
+
+a.social-btn:hover,
+a.social-btn:focus,
+a.social-btn:active {
+  /* -webkit-animation: pulse 150ms steps(4) 4 alternate; */
+  /* animation: pulse 150ms steps(4) 4 alternate; */
+}
+
+.nav-container li {
+  -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.social-btns li {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.social-btns li:hover {
+  background-color: rgba(229, 229, 229, 1);
+}
+
+.social-btns li.share-page:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.social-btns li:hover {
+  /* color: rgba(255, 255, 255, 1); */
+}
+
+.enable-social-btns-overlay {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid;
+  width: 55px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  padding: 12px;
   transition: all 200ms ease-out;
+  text-align: center;
+  border-color: rgb(229, 229, 229);
 
+    -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
 }
 
-a.social-btn:hover,
-a.social-btn:focus,
-a.social-btn:active {
-  -webkit-animation: pulse 150ms steps(4) 4 alternate;
-  animation: pulse 150ms steps(4) 4 alternate;
+.enable-social-btns-overlay:hover,
+.enable-social-btns-overlay:focus,
+.enable-social-btns-overlay:active {
+  background-color: rgb(229, 229, 229);
 }
 
+.tooltip:before, .tooltip:after {
+  top: -webkit-calc(100% + 8px);
+  top: -moz-calc(100% + 8px);
+  top: -ms-calc(100% + 8px);
+  top: -o-calc(100% + 8px);
+  top: calc(100% + 8px);
+  left: 50%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: 0.125s;
+  -moz-transition: 0.125s;
+  -o-transition: 0.125s;
+  -ms-transition: 0.125s;
+  transition: 0.125s;
+  z-index: 1;
+}
 
-a.social-btn:hover,
-a.social-btn:focus,
-a.social-btn:active {
-  -webkit-animation: pulse 150ms steps(4) 4 alternate;
-  animation: pulse 150ms steps(4) 4 alternate;
+.tooltip:after {
+  content: attr(data-message);
+  width: 135px;
+  color: #fff;
+  background-color: #000;
+  padding: 8px 10px;
+  margin-left: -67.5px;
+  text-align: center;
+}
+
+.tooltip:hover:after,
+.tooltip:active:after,
+.tooltip:focus:after {
+  opacity: 1;
 }
