@@ -3,8 +3,23 @@ $(window).load(function(){
   if($('.social-media-share-btns').length > 0) {
 
     $('.enable-social-btns-overlay').on('click', function() {
-      console.log('asda');
-      $(".social-btns-overlay").addClass('js-social-btns-container-fade');
+      enableSocialBtnsOverlay();
+    });
+
+    $('.btn-close-social-btns').on('click', function(){
+      disableSocialBtnsOverlay();
+    });
+
+    $(document).click(function (e) {
+      if (!$(".social-btns-overlay").hasClass('js-social-btns-container-fade')) {
+        return;
+      }
+      if ( !$('.enable-social-btns-overlay').is(e.target)
+        && !$('.enable-social-btns-overlay .i-share-arrow').is(e.target)
+        && !$('.social-btns-wrapper').is(e.target)
+        && !$('.btn-close-social-btns').is(e.target)) {
+        disableSocialBtnsOverlay();
+      }
     });
 
   }
@@ -30,11 +45,11 @@ $(window).load(function(){
   }
 
   var enableSocialBtnsOverlay = function() {
-    $('.social-btns-overlay').removeClass('js-social-btns-container-fade');
+    $(".social-btns-overlay").addClass('js-social-btns-container-fade');
   }
 
-  $('.btn-close-social-btns').on('click', function(){
-    enableSocialBtnsOverlay();
-  });
+  var disableSocialBtnsOverlay = function() {
+    $('.social-btns-overlay').removeClass('js-social-btns-container-fade');
+  }
 
 });

@@ -181,6 +181,10 @@
   background-image: url("../img/style/link-black.svg");
 }
 
+.i-play {
+  background-image: url("../img/style/play.svg");
+}
+
 .social-btn-facebook {
   background-color: rgba(59, 89, 152, 1); /* #3B5998 */
 }

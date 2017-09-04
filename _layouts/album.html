@@ -35,10 +35,24 @@ layout: default
           {% endif %}
           <div class="album-info push-0 micro p-container">{{ content | markdownify }}</div>
 
-          {% if page.enableSlideshow %}
-            <div class="enable-slideshow text-upper micro pad-t-1-2 pad-b-1-2 hidden">
-              <a class="brand-highlight brand-color-light" href="#slideshow">Open slideshow</a>
-            </div>
+          {% if page.enableSlideshow or page.displaySocialMediaShareButtons %}
+          <ul class="push-0 enable-overlay-btns list-group-inline block">
+
+            {% if page.enableSlideshow %}
+            <li class="enable-slideshow btn-enable-overlay icon-link tooltip milli" data-message="slideshow">
+              <i class="icon i-24 i-play"></i>
+              <span class="icon-label hidden">Open slideshow</span>
+            </li>
+            {% endif %}
+
+            {% if page.displaySocialMediaShareButtons %}
+            <li class="enable-social-btns-overlay btn-enable-overlay icon-link tooltip milli" data-message="share">
+              <i class="icon i-24 i-share-arrow"></i>
+              <span class="icon-label hidden">Share</span>
+            </li>
+            {% endif %}
+
+          </ul>
           {% endif %}
 
           {% if page.displaySocialMediaShareButtons %}

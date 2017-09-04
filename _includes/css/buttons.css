@@ -78,7 +78,7 @@ a.social-btn:active {
   /* color: rgba(255, 255, 255, 1); */
 }
 
-.enable-social-btns-overlay {
+.btn-enable-overlay {
   position: relative;
   cursor: pointer;
   color: #fff;
@@ -97,10 +97,14 @@ a.social-btn:active {
   transition: all 250ms linear;
 }
 
-.enable-social-btns-overlay:hover,
-.enable-social-btns-overlay:focus,
-.enable-social-btns-overlay:active {
+.btn-enable-overlay:hover,
+.btn-enable-overlay:focus,
+.btn-enable-overlay:active {
   background-color: rgb(229, 229, 229);
+}
+
+.btn-enable-overlay .i-play {
+  left: 3px;
 }
 
 .tooltip:before, .tooltip:after {

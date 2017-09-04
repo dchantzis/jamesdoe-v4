@@ -332,6 +332,10 @@ tbody tr:nth-child(odd) th {
   text-align: center;
 }
 
+.enable-overlay-btns {
+  text-align: center;
+}
+
 @media only screen and (min-width: 25em) {
 
   .album-image figcaption {

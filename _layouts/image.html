@@ -17,24 +17,32 @@ layout: default
       </div>
     </div>
 
-  {% if false %}
-      <div class="album-image pad-t-1-2">
-        <div class="grid">
-          <div class="unit [ xs-1 m-2-3 ] ">
-            {% include image.html %}
-          </div>
-          <div class="unit [ xs-1 m-1-3 ]">
-            {% include forms/form-contact-price.html %}
+    {% if false %}
+        <div class="album-image pad-t-1-2">
+          <div class="grid">
+            <div class="unit [ xs-1 m-2-3 ] ">
+              {% include image.html %}
+            </div>
+            <div class="unit [ xs-1 m-1-3 ]">
+              {% include forms/form-contact-price.html %}
+            </div>
           </div>
         </div>
-      </div>
-  {% else %}
+    {% else %}
 
     {% include image-with-sidebar-form-contact-price.html %}
 
   {% endif %}
 
   {% if false %}
+    {% if page.displaySocialMediaShareButtons %}
+      <ul class="push-0 enable-overlay-btns list-group-inline block">
+        <li class="enable-social-btns-overlay btn-enable-overlay icon-link tooltip milli" data-message="share">
+          <i class="icon i-24 i-share-arrow"></i>
+          <span class="icon-label hidden">Share</span>
+        </li>
+      </ul>
+    {% endif %}
     {% if page.displaySocialMediaShareButtons %}
     <div class="content-container gutter brand-color-light">
       <div class="social-share-buttons">
